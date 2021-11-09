@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_creonit/blocs/product_list/product_list_view.dart';
 import 'package:test_creonit/constants.dart';
 import 'package:test_creonit/models/category.dart';
+import 'package:test_creonit/widgets/extended_app_bar.dart';
 
 class ProductsPage extends StatefulWidget {
   const ProductsPage({required this.category, Key? key}) : super(key: key);
@@ -18,25 +19,7 @@ class _ProductsPageState extends State<ProductsPage> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 55),
       child: Scaffold(
-          appBar: AppBar(
-            actions: [
-              IconButton(
-                icon: SvgPicture.asset(Constants.iconsPath + "search.svg"),
-                tooltip: 'Поиск',
-                onPressed: () {
-                  // handle the press
-                },
-              ),
-            ],
-            title: Center(
-              child: Text(widget.category.title),
-            ),
-            leadingWidth: 47,
-            leading: GestureDetector(
-              child: SvgPicture.asset(Constants.iconsPath + "arrow_left.svg"),
-              onTap: () => Navigator.of(context).pop(),
-            ),
-          ),
+          appBar: ExtendedAppBar(title: widget.category.title, hasSearch: true,),
           body: Stack(
             children: [
               Column(
