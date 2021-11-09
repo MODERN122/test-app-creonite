@@ -28,7 +28,6 @@ class PaginationLoadingRepository extends LoadingMoreBase<Product> {
 
   @override
   Future<bool> loadData([bool isloadMoreAction = false]) async {
-    String url = "";
     bool isSuccess = false;
     try {
       var response = await _restService.getProductList(
@@ -47,10 +46,8 @@ class PaginationLoadingRepository extends LoadingMoreBase<Product> {
       _hasMore = source.pagination.page < source.pagination.pages;
       pageindex++;
       isSuccess = true;
-    } catch (exception, stack) {
+    } catch (exception) {
       isSuccess = false;
-      print(exception);
-      print(stack);
     }
     return isSuccess;
   }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test_creonit/constants.dart';
 
 class DefaultPage extends StatefulWidget {
-  DefaultPage({required this.title, Key? key}) : super(key: key);
+ const DefaultPage({required this.title, Key? key}) : super(key: key);
   final String title;
 
   @override
@@ -12,14 +12,17 @@ class DefaultPage extends StatefulWidget {
 class _DefaultPageState extends State<DefaultPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: Image.asset(Constants.iconsPath + "arrow_left.png")),
-      ),
-      body: Center(
-        child: Text(widget.title + " в разработке"),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 55),
+      child: Scaffold(
+        appBar: AppBar(
+          leading: GestureDetector(
+              onTap: () => Navigator.pop(context),
+              child: Image.asset(Constants.iconsPath + "arrow_left.png")),
+        ),
+        body: Center(
+          child: Text(widget.title + " в разработке"),
+        ),
       ),
     );
   }

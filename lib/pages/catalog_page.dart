@@ -19,7 +19,7 @@ class _CatalogPageState extends State<CatalogPage> {
             leading: GestureDetector(
                 onTap: () => Navigator.pop(context),
                 child: Image.asset(Constants.iconsPath + "arrow_left.png")),
-            title: Stack(children: [
+            title: Stack(children:const [
               Center(child: Text("Для лица")),
             ])),
         body: Column(children: const [

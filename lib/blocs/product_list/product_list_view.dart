@@ -41,116 +41,120 @@ class _ProductListViewState extends State<ProductListView> {
           child: BlocConsumer<ProductListBloc, ProductListState>(
               listener: (context, state) {},
               builder: (context, state) {
-                return Column(
-                  children: [
-                    SizedBox(
-                      height: 164,
-                      width: 164,
-                      child: Stack(
-                        children: [
-                          Center(
-                            child: Image.network(
-                              product.image.file.url,
+                return Padding(
+                  padding: const EdgeInsets.only(top: 24),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 164,
+                        width: 164,
+                        child: Stack(
+                          children: [
+                            Center(
+                              child: Image.network(
+                                product.image.file.url,
+                              ),
                             ),
-                          ),
-                          Positioned(
-                            top: 0,
-                            right: 0,
-                            child:
-                                Image.asset(Constants.iconsPath + "heart.png"),
-                          ),
-                          Positioned(
-                            bottom: 0,
-                            left: 0,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(4),
-                              child: Container(
-                                color: const Color(0xFF537B39),
-                                child: const Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 8,
-                                    vertical: 4,
-                                  ),
-                                  child: Text(
-                                    "ХИТ",
-                                    style: TextStyle(
-                                      color: Colors.white,
+                            Positioned(
+                              top: 0,
+                              right: 0,
+                              child: Image.asset(
+                                  Constants.iconsPath + "heart.png"),
+                            ),
+                            Positioned(
+                              bottom: 0,
+                              left: 0,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(4),
+                                child: Container(
+                                  color: const Color(0xFF537B39),
+                                  child: const Padding(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 8,
+                                      vertical: 4,
+                                    ),
+                                    child: Text(
+                                      "ХИТ",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                          )
-                        ],
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(4),
-                      child: Container(
-                        color: const Color(0x148A8884),
-                        width: 164,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 10),
-                          child: Row(
-                            children: [
-                              Text(
-                                "${product.price} ₽",
-                                style: const TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.w700),
-                              ),
-                              const Spacer(),
-                              GestureDetector(
-                                onTap: () => context
-                                    .read<ProductListBloc>()
-                                    .add(state is ProductInCart
-                                        ? RemoveProductFromCart()
-                                        : AddProductToCart()),
-                                child: Image.asset(
-                                  Constants.iconsPath + "cart.png",
-                                  color: state is ProductInCart
-                                      ? Colors.black
-                                      : const Color(0xFF414951),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(4),
+                        child: Container(
+                          color: const Color(0x148A8884),
+                          width: 164,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 10),
+                            child: Row(
+                              children: [
+                                Text(
+                                  "${product.price} ₽",
+                                  style: const TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w700),
                                 ),
-                              ),
-                            ],
+                                const Spacer(),
+                                GestureDetector(
+                                  onTap: () => context
+                                      .read<ProductListBloc>()
+                                      .add(state is ProductInCart
+                                          ? RemoveProductFromCart()
+                                          : AddProductToCart()),
+                                  child: Image.asset(
+                                    Constants.iconsPath + "cart.png",
+                                    color: state is ProductInCart
+                                        ? Colors.black
+                                        : const Color(0xFF414951),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 12,
-                    ),
-                    Container(
-                      width: 164,
-                      child: Text(
-                        product.slug,
-                        maxLines: 1,
-                        style: TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xFF8A8884),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      SizedBox(
+                        width: 164,
+                        child: Text(
+                          product.slug,
+                          maxLines: 1,
+                          style:const TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xFF8A8884),
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Container(
-                      height: 79,
-                      width: 164,
-                      child: Text(
-                        product.title,
-                        style: TextStyle(
-                            color: Color(0xFF414951),
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400),
+                      const SizedBox(
+                        height: 8,
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        height: 79,
+                        width: 164,
+                        child: Text(
+                          product.title,
+                          style:const TextStyle(
+                              color: Color(0xFF414951),
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400),
+                        ),
+                      ),
+                    ],
+                  ),
                 );
               }),
         ),
@@ -170,12 +174,10 @@ class _ProductListViewState extends State<ProductListView> {
         },
         sourceList: listSourceRepository,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-
-          
-          mainAxisExtent: 333,
+          mainAxisExtent: 358,
           crossAxisCount: 2,
           crossAxisSpacing: 3.0,
-          mainAxisSpacing: 36.0,
+          mainAxisSpacing: 12.0,
         ),
       ),
     );

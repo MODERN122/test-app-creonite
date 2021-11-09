@@ -5,7 +5,8 @@ import 'package:test_creonit/pages/catalog_page.dart';
 import 'package:test_creonit/pages/default_page.dart';
 
 class PagesWrapper extends StatefulWidget {
-  const PagesWrapper({this.initPageIndex, this.innerPage});
+  const PagesWrapper({this.initPageIndex, this.innerPage, Key? key})
+      : super(key: key);
 
   final int? initPageIndex;
   final Widget? innerPage;
@@ -27,7 +28,7 @@ class _PagesWrapperState extends State<PagesWrapper> {
   }
 
   final List<_Page> bottomMenupages = [
-    _Page(
+    const _Page(
       DefaultPage(title: "Главная"),
       Constants.iconsPath + "home.png",
       'Главная',
@@ -37,14 +38,14 @@ class _PagesWrapperState extends State<PagesWrapper> {
       Constants.iconsPath + "catalog.png",
       'Каталог',
     ),
-    _Page(DefaultPage(title: 'Избранное'), Constants.iconsPath + "heart.png",
-        'Избранное'),
-    _Page(
+    const _Page(DefaultPage(title: 'Избранное'),
+        Constants.iconsPath + "heart.png", 'Избранное'),
+    const _Page(
       DefaultPage(title: 'Корзина'),
       Constants.iconsPath + "cart.png",
       'Корзина',
     ),
-    _Page(
+    const _Page(
       DefaultPage(title: 'Профиль'),
       Constants.iconsPath + "profile.png",
       'Профиль',
@@ -53,7 +54,7 @@ class _PagesWrapperState extends State<PagesWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    Widget body = Center(
+    Widget body = const Center(
       child: Text('Произошла ошибка'),
     );
 

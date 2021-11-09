@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
               ),
               actionsIconTheme: IconThemeData(color: Color(0xFF130F26)),
             )),
-        home: PagesWrapper(
+        home:const PagesWrapper(
           initPageIndex: 1,
         ),
       ),

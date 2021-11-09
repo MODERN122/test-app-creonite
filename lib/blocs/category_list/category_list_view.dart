@@ -59,7 +59,7 @@ class _CategoryListViewState extends State<CategoryListView> {
                                       fontStyle: FontStyle.normal,
                                     ),
                                   ),
-                                  Spacer(),
+                                 const Spacer(),
                                   Padding(
                                     padding: const EdgeInsets.only(right: 7),
                                     child: Image.asset(Constants.iconsPath +
