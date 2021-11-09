@@ -34,10 +34,12 @@ class ExtendedAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       leadingWidth: 47,
-      leading: IconButton(
-        icon: SvgPicture.asset(Constants.iconsPath + "arrow_left.svg"),
-        onPressed: () => Navigator.of(context).pop(),
-      ),
+      leading: Navigator.of(context).canPop()
+          ? IconButton(
+              icon: SvgPicture.asset(Constants.iconsPath + "arrow_left.svg"),
+              onPressed: () => Navigator.of(context).pop(),
+            )
+          : null,
     );
   }
 
