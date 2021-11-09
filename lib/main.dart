@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<CategoryListBloc>(
           create: (BuildContext context) => CategoryListBloc(
             categoriesRepository: categoriesRepository,
-          ),
+          )..add(GetCategoryList()),
         ),
       ],
       child: MaterialApp(

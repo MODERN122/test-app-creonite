@@ -17,7 +17,6 @@ class _CategoryListViewState extends State<CategoryListView> {
   @override
   void initState() {
     categoryListBloc = context.read<CategoryListBloc>();
-    categoryListBloc.add(GetCategoryList());
     super.initState();
   }
 
@@ -38,6 +37,7 @@ class _CategoryListViewState extends State<CategoryListView> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => PagesWrapper(
+                              initPageIndex: 1,
                               innerPage: ProductsPage(category: categories[i])),
                         ),
                       ),
@@ -59,7 +59,7 @@ class _CategoryListViewState extends State<CategoryListView> {
                                       fontStyle: FontStyle.normal,
                                     ),
                                   ),
-                                 const Spacer(),
+                                  const Spacer(),
                                   Padding(
                                     padding: const EdgeInsets.only(right: 7),
                                     child: Image.asset(Constants.iconsPath +
