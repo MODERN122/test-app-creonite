@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_creonit/blocs/category_list/category_list_view.dart';
 import 'package:test_creonit/constants.dart';
+import 'package:test_creonit/widgets/extended_app_bar.dart';
 
 class CatalogPage extends StatefulWidget {
   const CatalogPage({Key? key}) : super(key: key);
@@ -16,14 +17,9 @@ class _CatalogPageState extends State<CatalogPage> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 55),
       child: Scaffold(
-        appBar: AppBar(
-            leading: GestureDetector(
-                onTap: () => Navigator.pop(context),
-                child:
-                    SvgPicture.asset(Constants.iconsPath + "arrow_left.svg")),
-            title: Stack(children: const [
-              Center(child: Text("Для лица")),
-            ])),
+        appBar: ExtendedAppBar(
+          title: "Для лица",
+        ),
         body: Column(children: const [
           Divider(
             height: 1,
