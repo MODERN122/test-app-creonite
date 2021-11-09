@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:loading_more_list/loading_more_list.dart';
 import 'package:test_creonit/blocs/product_list/bloc/product_list_bloc.dart';
 import 'package:test_creonit/constants.dart';
@@ -58,8 +59,8 @@ class _ProductListViewState extends State<ProductListView> {
                             Positioned(
                               top: 0,
                               right: 0,
-                              child: Image.asset(
-                                  Constants.iconsPath + "heart.png"),
+                              child: SvgPicture.asset(
+                                  Constants.iconsPath + "heart.svg"),
                             ),
                             Positioned(
                               bottom: 0,
@@ -112,8 +113,8 @@ class _ProductListViewState extends State<ProductListView> {
                                       .add(state is ProductInCart
                                           ? RemoveProductFromCart()
                                           : AddProductToCart()),
-                                  child: Image.asset(
-                                    Constants.iconsPath + "cart.png",
+                                  child: SvgPicture.asset(
+                                    Constants.iconsPath + "cart.svg",
                                     color: state is ProductInCart
                                         ? Colors.black
                                         : const Color(0xFF414951),
@@ -132,7 +133,7 @@ class _ProductListViewState extends State<ProductListView> {
                         child: Text(
                           product.slug,
                           maxLines: 1,
-                          style:const TextStyle(
+                          style: const TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.w400,
                             color: Color(0xFF8A8884),
@@ -147,7 +148,7 @@ class _ProductListViewState extends State<ProductListView> {
                         width: 164,
                         child: Text(
                           product.title,
-                          style:const TextStyle(
+                          style: const TextStyle(
                               color: Color(0xFF414951),
                               fontSize: 12,
                               fontWeight: FontWeight.w400),

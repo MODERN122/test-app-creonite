@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_creonit/blocs/category_list/category_list_view.dart';
 import 'package:test_creonit/constants.dart';
 
@@ -18,8 +19,9 @@ class _CatalogPageState extends State<CatalogPage> {
         appBar: AppBar(
             leading: GestureDetector(
                 onTap: () => Navigator.pop(context),
-                child: Image.asset(Constants.iconsPath + "arrow_left.png")),
-            title: Stack(children:const [
+                child:
+                    SvgPicture.asset(Constants.iconsPath + "arrow_left.svg")),
+            title: Stack(children: const [
               Center(child: Text("Для лица")),
             ])),
         body: Column(children: const [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_creonit/blocs/product_list/product_list_view.dart';
 import 'package:test_creonit/constants.dart';
 import 'package:test_creonit/models/category.dart';
@@ -20,7 +21,7 @@ class _ProductsPageState extends State<ProductsPage> {
           appBar: AppBar(
             actions: [
               IconButton(
-                icon: Image.asset(Constants.iconsPath + "search.png"),
+                icon: SvgPicture.asset(Constants.iconsPath + "search.svg"),
                 tooltip: 'Поиск',
                 onPressed: () {
                   // handle the press
@@ -32,7 +33,7 @@ class _ProductsPageState extends State<ProductsPage> {
             ),
             leadingWidth: 47,
             leading: GestureDetector(
-              child: Image.asset(Constants.iconsPath + "arrow_left.png"),
+              child: SvgPicture.asset(Constants.iconsPath + "arrow_left.svg"),
               onTap: () => Navigator.of(context).pop(),
             ),
           ),
@@ -56,8 +57,8 @@ class _ProductsPageState extends State<ProductsPage> {
                                 Padding(
                                   padding:
                                       const EdgeInsets.only(top: 4, right: 8),
-                                  child: Image.asset(
-                                      Constants.iconsPath + "filter.png"),
+                                  child: SvgPicture.asset(
+                                      Constants.iconsPath + "filter.svg"),
                                 ),
                                 const Center(
                                     child: Text(
@@ -85,8 +86,8 @@ class _ProductsPageState extends State<ProductsPage> {
                                 Padding(
                                   padding:
                                       const EdgeInsets.only(top: 4, right: 8),
-                                  child: Image.asset(
-                                      Constants.iconsPath + "sorting.png"),
+                                  child: SvgPicture.asset(
+                                      Constants.iconsPath + "sorting.svg"),
                                 ),
                                 const Center(
                                   child: Text(

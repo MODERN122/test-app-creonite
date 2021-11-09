@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_creonit/constants.dart';
 import 'package:test_creonit/pages/catalog_page.dart';
 import 'package:test_creonit/pages/default_page.dart';
@@ -30,24 +31,24 @@ class _PagesWrapperState extends State<PagesWrapper> {
   final List<_Page> bottomMenupages = [
     const _Page(
       DefaultPage(title: "Главная"),
-      Constants.iconsPath + "home.png",
+      Constants.iconsPath + "home.svg",
       'Главная',
     ),
     const _Page(
       CatalogPage(),
-      Constants.iconsPath + "catalog.png",
+      Constants.iconsPath + "catalog.svg",
       'Каталог',
     ),
     const _Page(DefaultPage(title: 'Избранное'),
-        Constants.iconsPath + "heart.png", 'Избранное'),
+        Constants.iconsPath + "heart.svg", 'Избранное'),
     const _Page(
       DefaultPage(title: 'Корзина'),
-      Constants.iconsPath + "cart.png",
+      Constants.iconsPath + "cart.svg",
       'Корзина',
     ),
     const _Page(
       DefaultPage(title: 'Профиль'),
-      Constants.iconsPath + "profile.png",
+      Constants.iconsPath + "profile.svg",
       'Профиль',
     ),
   ];
@@ -103,7 +104,7 @@ class _PagesWrapperState extends State<PagesWrapper> {
           height: 55,
           child: Column(
             children: [
-              Image.asset(
+              SvgPicture.asset(
                 page.assetIcon,
                 color: key == _currentPageIndex
                     ? const Color(0xFF414951)

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_creonit/blocs/category_list/bloc/category_list_bloc.dart';
 import 'package:test_creonit/constants.dart';
 import 'package:test_creonit/pages/products_page.dart';
@@ -62,8 +63,9 @@ class _CategoryListViewState extends State<CategoryListView> {
                                   const Spacer(),
                                   Padding(
                                     padding: const EdgeInsets.only(right: 7),
-                                    child: Image.asset(Constants.iconsPath +
-                                        "arrow_right.png"),
+                                    child: SvgPicture.asset(
+                                        Constants.iconsPath +
+                                            "arrow_right.svg"),
                                   )
                                 ],
                               ),

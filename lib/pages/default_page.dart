@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:test_creonit/constants.dart';
 
 class DefaultPage extends StatefulWidget {
- const DefaultPage({required this.title, Key? key}) : super(key: key);
+  const DefaultPage({required this.title, Key? key}) : super(key: key);
   final String title;
 
   @override
@@ -18,7 +19,7 @@ class _DefaultPageState extends State<DefaultPage> {
         appBar: AppBar(
           leading: GestureDetector(
               onTap: () => Navigator.pop(context),
-              child: Image.asset(Constants.iconsPath + "arrow_left.png")),
+              child: SvgPicture.asset(Constants.iconsPath + "arrow_left.svg")),
         ),
         body: Center(
           child: Text(widget.title + " в разработке"),
