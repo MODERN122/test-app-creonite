@@ -37,6 +37,7 @@ class ExtendedAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Navigator.of(context).canPop()
           ? IconButton(
               icon: SvgPicture.asset(Constants.iconsPath + "arrow_left.svg"),
+              tooltip: 'Назад',
               onPressed: () => Navigator.of(context).pop(),
             )
           : null,
