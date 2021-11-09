@@ -17,7 +17,7 @@ class _DefaultPageState extends State<DefaultPage> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 55),
       child: Scaffold(
-        appBar: ExtendedAppBar(title: widget.title + " в разработке"),
+        appBar: ExtendedAppBar(title: "Экран" + widget.title + " в разработке"),
       ),
     );
   }
